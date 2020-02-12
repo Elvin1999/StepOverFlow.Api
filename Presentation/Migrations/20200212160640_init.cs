@@ -56,7 +56,7 @@ namespace Presentation.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "1, 1"), 
                     IsDeleted = table.Column<bool>(nullable: true),
                     CreatedAt = table.Column<DateTimeOffset>(nullable: false),
                     Name = table.Column<string>(nullable: true)
