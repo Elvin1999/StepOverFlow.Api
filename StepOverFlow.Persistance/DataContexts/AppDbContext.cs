@@ -31,6 +31,11 @@ namespace StepOverFlow.Persistance.DataContexts
 {
     public class AppDbContext : IdentityDbContext<AppUser,IdentityRole, string>, IDatabaseService
     {
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            :base(options)
+        {
+
+        }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
