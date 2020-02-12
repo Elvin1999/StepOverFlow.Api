@@ -4,7 +4,9 @@ using System.Text;
 
 namespace StepOverFlow.Domain.Enums.EEventStatus
 {
-   public enum EEventStatus
+    public enum EEventStatus
     {
+        Yes=0,
+        No=1
     }
 }
