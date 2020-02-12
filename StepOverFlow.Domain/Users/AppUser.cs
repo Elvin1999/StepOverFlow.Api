@@ -1,11 +1,11 @@
-﻿
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using StepOverFlow.Domain.Answers;
 using StepOverFlow.Domain.Comments;
 using StepOverFlow.Domain.Events;
 using StepOverFlow.Domain.EventUsers;
 using StepOverFlow.Domain.FavoritePosts;
 using StepOverFlow.Domain.FavoriteQuestions;
+using StepOverFlow.Domain.Groups;
 using StepOverFlow.Domain.Likes;
 using StepOverFlow.Domain.Messages;
 using StepOverFlow.Domain.Notifications;
@@ -17,7 +17,6 @@ using StepOverFlow.Domain.UserTeams;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace StepOverFlow.Domain.Users
 {

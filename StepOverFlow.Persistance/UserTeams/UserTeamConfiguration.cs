@@ -10,7 +10,6 @@ namespace StepOverFlow.Persistance.UserTeams
         {
             builder.HasKey(ps => new { ps.AppUserId, ps.TeamId });
 
-
             builder.HasOne(ps => ps.AppUser)
                 .WithMany(ps => ps.UserTeams)
                 .HasForeignKey(ps => ps.AppUserId);

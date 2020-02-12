@@ -29,8 +29,11 @@ using System.Text;
 
 namespace StepOverFlow.Persistance.DataContexts
 {
-    public class AppDbContext : IdentityDbContext<AppUser,IdentityRole, string>, IDatabaseService
-    {
+    public class AppDbContext : IdentityDbContext<AppUser, IdentityRole, string> { 
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
+
         public DbSet<Post> Posts { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
@@ -54,8 +57,26 @@ namespace StepOverFlow.Persistance.DataContexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<UserTeam>((b) =>
+            {
+                b.HasKey(ps => new { ps.AppUserId, ps.TeamId });
+
+                b.HasOne(ps => ps.AppUser)
+                    .WithMany(ps => ps.UserTeams)
+                    .HasForeignKey(ps => ps.AppUserId);
+
+                b.HasOne(ps => ps.Team)
+                    .WithMany(ps => ps.UserTeams)
+                    .HasForeignKey(ps => ps.TeamId);
+
+            });
+
+            builder.Entity<Notification>().HasOne(x => x.Reciever).WithOne().HasForeignKey<Notification>(p => p.RecieverId);
+            builder.Entity<Notification>().HasOne(x => x.Sender).WithOne().HasForeignKey<Notification>(p => p.SenderId);
             builder.ApplyConfiguration(new UserTeamConfiguration());
         }
+
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder

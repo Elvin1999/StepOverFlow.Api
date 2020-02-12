@@ -15,9 +15,5 @@ namespace StepOverFlow.Domain.Teams
         public virtual List<UserTeam> UserTeams { get; set; }
         public string CreaterId { get; set; }
         public virtual AppUser Creater { get; set; }
-
-
-
-
     }
 }

@@ -23,7 +23,5 @@ namespace StepOverFlow.Domain.Posts
         public virtual Speciality Speciality { get; set; }
         public virtual List<Comment> Comments { get; set; }
         public virtual List<Like> Likes { get; set; }
-
-
     }
 }
