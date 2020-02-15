@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using StepOverFlow.Application.Interfaces;
 using StepOverFlow.Persistance.DataContexts;
 
 namespace Presentation
@@ -30,7 +31,7 @@ namespace Presentation
         {
 
             var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-
+            services.AddScoped<IDatabaseService, AppDbContext>();
             services
                 .AddDbContext<AppDbContext>(options =>
                     {
