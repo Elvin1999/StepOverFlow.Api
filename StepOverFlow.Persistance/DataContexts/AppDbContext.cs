@@ -59,19 +59,19 @@ namespace StepOverFlow.Persistance.DataContexts
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<UserTeam>((b) =>
-            {
-                b.HasKey(ps => new { ps.AppUserId, ps.TeamId });
+            //builder.Entity<UserTeam>((b) =>
+            //{
+            //    b.HasKey(ps => new { ps.AppUserId, ps.TeamId });
 
-                b.HasOne(ps => ps.AppUser)
-                    .WithMany(ps => ps.UserTeams)
-                    .HasForeignKey(ps => ps.AppUserId);
+            //    b.HasOne(ps => ps.AppUser)
+            //        .WithMany(ps => ps.UserTeams)
+            //        .HasForeignKey(ps => ps.AppUserId);
 
-                b.HasOne(ps => ps.Team)
-                    .WithMany(ps => ps.UserTeams)
-                    .HasForeignKey(ps => ps.TeamId);
+            //    b.HasOne(ps => ps.Team)
+            //        .WithMany(ps => ps.UserTeams)
+            //        .HasForeignKey(ps => ps.TeamId);
 
-            });
+            //});
 
             builder.Entity<Notification>().HasOne(x => x.Reciever).WithOne().HasForeignKey<Notification>(p => p.RecieverId);
             builder.Entity<Notification>().HasOne(x => x.Sender).WithOne().HasForeignKey<Notification>(p => p.SenderId);
