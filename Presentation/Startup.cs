@@ -14,7 +14,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using StepOverFlow.Application.Interfaces;
 using StepOverFlow.Persistance.DataContexts;
-
 namespace Presentation
 {
     public class Startup
