@@ -5,9 +5,8 @@ using StepOverFlow.Domain.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace StepOverFlow.Domain.EventUsers
-{//chx-chox deyil
+{
     public class EventUser:Entity<int>
     {
         public int EventId { get; set; }

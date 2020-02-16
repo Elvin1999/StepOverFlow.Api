@@ -1,4 +1,4 @@
-﻿using StepOverFlow.Application.Post.Queries.GetPostsList;
+﻿using StepOverFlow.Application.Posts.Queries.GetPostsList;
 using System;
 using System.Collections.Generic;
 using System.Text;
