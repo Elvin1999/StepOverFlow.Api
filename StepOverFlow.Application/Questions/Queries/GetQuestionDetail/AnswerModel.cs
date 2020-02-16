@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StepOverFlow.Application.Questions.Queries.GetQuestionDetail
 {
-    public class AnswerViewModel
+    public class AnswerModel
     {
         public int Id { get; set; }
         public bool IsCorrect { get; set; }

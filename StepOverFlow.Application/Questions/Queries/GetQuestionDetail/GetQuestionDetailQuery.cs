@@ -27,7 +27,7 @@ namespace StepOverFlow.Application.Questions.Queries.GetQuestionDetail
                 .Where(i => i.Id == questionId).Select(i => new QuestionDetailItemModel
                 {
                     Id = i.Id,
-                    Answers = i.Answers.Select(ii => new AnswerViewModel
+                    Answers = i.Answers.Select(ii => new AnswerModel
                     {
                         Id = ii.Id,
                         IsCorrect = ii.IsCorrect,
@@ -38,7 +38,7 @@ namespace StepOverFlow.Application.Questions.Queries.GetQuestionDetail
                     }).ToList(),
                     AppUserId = i.AppUserId,
                     UserName = i.AppUser.UserName,
-                    Comments = i.Comments.Select(c => new CommentViewModel
+                    Comments = i.Comments.Select(c => new CommentModel
                     {
                         Id = c.Id,
                         UserId = c.AppUserId,

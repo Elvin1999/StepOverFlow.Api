@@ -17,7 +17,7 @@ namespace StepOverFlow.Application.Questions.Queries.GetQuestionDetail
         public string SkillName { get; set; }
         public int SpecialtiyId { get; set; }
         public string SpecialityName { get; set; }
-        public List<AnswerViewModel> Answers { get; set; }
-        public List<CommentViewModel> Comments { get; set; }
+        public List<AnswerModel> Answers { get; set; }
+        public List<CommentModel> Comments { get; set; }
     }
 }

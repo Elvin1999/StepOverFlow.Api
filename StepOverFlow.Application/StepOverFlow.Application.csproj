@@ -16,9 +16,4 @@
     <ProjectReference Include="..\StepOverFlow.Domain\StepOverFlow.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Users\Commands\" />
-    <Folder Include="Users\Queries\" />
-  </ItemGroup>
-
 </Project>
